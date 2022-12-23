@@ -1,0 +1,133 @@
+[
+  {
+    "_id": "igt8aeclc0atqmr",
+    "name": "331fdsfsf0",
+    "description": "somthing longer",
+    "brand": "nokia",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 10,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T09:16:57.746Z",
+    "updatedAt": "2022-12-23T09:16:57.746Z"
+  },
+  {
+    "_id": "igt8eqslc0dpnl4",
+    "name": "331fdsfdsdsadssf0",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 25,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T10:37:46.023Z",
+    "updatedAt": "2022-12-23T10:37:46.023Z"
+  },
+  {
+    "_id": "igt82uklc0dsvit",
+    "name": "331fdsfdsdsadssf0",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 60,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T10:40:16.276Z",
+    "updatedAt": "2022-12-23T10:40:16.276Z"
+  },
+  {
+    "_id": "igt8db0lc0dt116",
+    "name": "331fdsfdsdsadssf0",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 11,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T10:40:23.417Z",
+    "updatedAt": "2022-12-23T10:40:23.417Z"
+  },
+  {
+    "_id": "igt85volc0dtm7j",
+    "name": "331fdsfdsdsadssf0",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 24,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T10:40:50.862Z",
+    "updatedAt": "2022-12-23T10:40:50.862Z"
+  },
+  {
+    "_id": "igt894glc0dwnz1",
+    "name": "331fdsfdsdsadssf0",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 54,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T10:43:13.116Z",
+    "updatedAt": "2022-12-23T10:43:13.116Z"
+  },
+  {
+    "_id": "igt82pwlc0e1w73",
+    "name": "331fdsfdsdsadssf0",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 1,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T10:47:17.054Z",
+    "updatedAt": "2022-12-23T10:47:17.054Z"
+  },
+  {
+    "_id": "igt8bx4lc0e3s5s",
+    "name": "331fdsfdsdsadssf0",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 4,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T10:48:45.135Z",
+    "updatedAt": "2022-12-23T10:48:45.135Z"
+  },
+  {
+    "_id": "igt8eholc0eq7ka",
+    "name": "331fdsfdsdsadssf0",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 100,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T11:06:11.529Z",
+    "updatedAt": "2022-12-23T11:06:11.529Z"
+  },
+  {
+    "_id": "igt8c3olc0exzdn",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 100,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T11:12:14.170Z",
+    "updatedAt": "2022-12-23T11:12:14.170Z"
+  },
+  {
+    "_id": "igt8f2klc0ezipd",
+    "name": "f",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 100,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T11:13:25.872Z",
+    "updatedAt": "2022-12-23T11:13:25.872Z"
+  },
+  {
+    "_id": "igt8ee8lc0f4xm3",
+    "name": "f",
+    "description": "somthing longer",
+    "brand": "iPhone",
+    "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80",
+    "price": 100,
+    "category": "smartphones",
+    "createdAt": "2022-12-23T11:17:38.474Z",
+    "updatedAt": "2022-12-23T11:17:38.474Z"
+  }
+]

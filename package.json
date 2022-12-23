@@ -1,0 +1,32 @@
+{
+  "name": "be1-solo-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Earpz1/BE1-Solo-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Earpz1/BE1-Solo-Project/issues"
+  },
+  "homepage": "https://github.com/Earpz1/BE1-Solo-Project#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "fs-extra": "^11.1.0",
+    "http-errors": "^2.0.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.20",
+    "uniqid": "^5.4.0"
+  }
+}
