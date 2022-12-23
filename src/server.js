@@ -4,7 +4,6 @@ import cors from 'cors'
 import { genericError, NotFoundError } from './errors.js'
 import productsRouter from '../products/index.js'
 import reviewsRouter from '../reviews/index.js'
-import { checkJSON } from '../lib/middleware.js'
 
 const server = express()
 const port = 3001

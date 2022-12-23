@@ -84,9 +84,9 @@ productsRouter.post(
   },
 )
 
-//Delete post from ID
+//Delete product from ID
 
-productsRouter.delete('/:id', async (request, resposne, next) => {
+productsRouter.delete('/:id', async (request, response, next) => {
   try {
     const productsFile = await getProducts()
     const productID = request.params.id
