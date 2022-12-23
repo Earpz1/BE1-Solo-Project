@@ -10,7 +10,9 @@ import {
   getReviews,
   writeReview,
 } from '../lib/file-funcs.js'
-import { check, validationResult } from 'express-validator'
+import { checkSchema, validationResult } from 'express-validator'
+import { productSchema } from './validator.js'
+import { reviewSchema } from '../reviews/validator.js'
 
 const productsRouter = express.Router()
 
@@ -50,25 +52,37 @@ productsRouter.get('/:id', async (request, response, next) => {
 
 //Post a new Product
 
-productsRouter.post('/', async (request, response, next) => {
-  try {
-    console.log(request.body)
-    const newProduct = {
-      _id: uniqid(),
-      ...request.body,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+productsRouter.post(
+  '/',
+  checkSchema(productSchema),
+  async (request, response, next) => {
+    const errors = validationResult(request)
+
+    if (!errors.isEmpty()) {
+      return response.status(400).json({
+        errors: errors.array(),
+      })
     }
 
-    const productsFile = await getProducts()
+    try {
+      console.log(request.body)
+      const newProduct = {
+        _id: uniqid(),
+        ...request.body,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }
 
-    productsFile.push(newProduct)
-    await writeProducts(productsFile)
-    response.status(201).send(newProduct)
-  } catch (error) {
-    next(error)
-  }
-})
+      const productsFile = await getProducts()
+
+      productsFile.push(newProduct)
+      await writeProducts(productsFile)
+      response.status(201).send(newProduct)
+    } catch (error) {
+      next(error)
+    }
+  },
+)
 
 //Delete post from ID
 
@@ -139,22 +153,33 @@ productsRouter.post(
 
 //Add a new review
 
-productsRouter.post('/:id/review', async (request, response, next) => {
-  try {
-    const reviewFile = await getReviews()
-    const newReview = {
-      _id: uniqid(),
-      ...request.body,
-      productId: request.params.id,
-      createdAt: new Date(),
+productsRouter.post(
+  '/:id/review',
+  checkSchema(reviewSchema),
+  async (request, response, next) => {
+    const errors = validationResult(request)
+
+    if (!errors.isEmpty()) {
+      return response.status(400).json({
+        errors: errors.array(),
+      })
     }
-    reviewFile.push(newReview)
-    await writeReview(reviewFile)
-    response.status(201).send(newReview)
-  } catch (error) {
-    next(error)
-  }
-})
+    try {
+      const reviewFile = await getReviews()
+      const newReview = {
+        _id: uniqid(),
+        ...request.body,
+        productId: request.params.id,
+        createdAt: new Date(),
+      }
+      reviewFile.push(newReview)
+      await writeReview(reviewFile)
+      response.status(201).send(newReview)
+    } catch (error) {
+      next(error)
+    }
+  },
+)
 
 //Get all reviews for a specific product
 productsRouter.get('/:productId/reviews', async (request, response, next) => {
