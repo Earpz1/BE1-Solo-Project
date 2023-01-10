@@ -13,13 +13,19 @@ server.get('/', (request, response) => {
   response.send('Successful connection')
 })
 
-const corsOptions = {
-  origin: 'http://myfrontend.com',
-}
+const whitelist = [process.env.FE_PROD_URL]
 
 //Middleware
 server.use(express.static(publicFolder))
-server.use(cors(corsOptions))
+
+server.use(
+  cors({
+    origin: (origin, corsNext) => {
+      console.log('Origin: ', origin)
+    },
+  }),
+)
+
 server.use(express.json())
 
 //Endpoints
