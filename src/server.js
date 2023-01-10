@@ -23,7 +23,7 @@ server.use(
   cors({
     origin: (origin, corsNext) => {
       console.log('Origin: ', origin)
-      console.log(process.env)
+
       if (!origin || whitelist.indexOf(origin) !== -1) {
         corsNext(null, true)
       } else {
@@ -46,4 +46,5 @@ server.use(genericError)
 
 server.listen(port, () => {
   console.log('The server is running on port', port)
+  console.log(process.env)
 })
