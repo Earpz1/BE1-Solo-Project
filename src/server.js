@@ -4,6 +4,7 @@ import cors from 'cors'
 import { genericError, NotFoundError } from './errors.js'
 import productsRouter from '../products/index.js'
 import reviewsRouter from '../reviews/index.js'
+import createHttpError from 'http-errors'
 
 const server = express()
 const port = 3001
@@ -22,6 +23,11 @@ server.use(
   cors({
     origin: (origin, corsNext) => {
       console.log('Origin: ', origin)
+      if (!origin || whitelist.indexOf(origin) !== -1) {
+        corsNext(null, true)
+      } else {
+        corsNext(createHttpError(400, `Cors Error!`))
+      }
     },
   }),
 )
