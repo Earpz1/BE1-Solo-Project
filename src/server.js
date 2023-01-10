@@ -7,7 +7,7 @@ import reviewsRouter from '../reviews/index.js'
 import createHttpError from 'http-errors'
 
 const server = express()
-const port = 3001
+const port = process.env.PORT
 const publicFolder = join(process.cwd(), './public')
 
 server.get('/', (request, response) => {
