@@ -13,9 +13,13 @@ server.get('/', (request, response) => {
   response.send('Successful connection')
 })
 
+const corsOptions = {
+  origin: 'http://myfrontend.com',
+}
+
 //Middleware
 server.use(express.static(publicFolder))
-server.use(cors())
+server.use(cors(corsOptions))
 server.use(express.json())
 
 //Endpoints
