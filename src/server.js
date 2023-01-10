@@ -26,7 +26,7 @@ server.use(
       if (!origin || whitelist.indexOf(origin) !== -1) {
         corsNext(null, true)
       } else {
-        corsNext(createHttpError(400, `Cors Error!`))
+        corsNext(createHttpError(400, `Cors Errors!`))
       }
     },
   }),
