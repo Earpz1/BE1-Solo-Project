@@ -45,6 +45,6 @@ server.use(NotFoundError)
 server.use(genericError)
 
 server.listen(port, () => {
-  console.log('The server is running on port', port)
+  console.log('The server is running on port', process.env.PORT)
   console.log(process.env)
 })
