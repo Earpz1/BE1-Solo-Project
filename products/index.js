@@ -9,12 +9,23 @@ import {
   writeProducts,
   getReviews,
   writeReview,
-} from '../lib/file-funcs.js'
+} from '../../../lib/file-funcs.js'
 import { checkSchema, validationResult } from 'express-validator'
 import { productSchema } from './validator.js'
-import { reviewSchema } from '../reviews/validator.js'
+import { reviewSchema } from '../../../reviews/validator.js'
+import { CloudinaryStorage } from 'multer-storage-cloudinary'
+import { v2 as cloudinary } from 'cloudinary'
 
 const productsRouter = express.Router()
+
+const cloudUploader = multer({
+  storage: new CloudinaryStorage({
+    cloudinary,
+    params: {
+      folder: 'solo',
+    },
+  }),
+}).single('productImage')
 
 //Get all products and filter them if price is less than X (use ?price=X)
 productsRouter.get('/', async (request, response, next) => {
@@ -123,8 +134,8 @@ productsRouter.put('/:id', async (request, response, next) => {
 
 productsRouter.post(
   '/:id/upload',
-  multer().single('productImage'),
-  async (request, resposne, next) => {
+  cloudUploader,
+  async (request, response, next) => {
     try {
       const fileName = request.params.id + '.gif'
       const URL = 'http://localhost:3001/img/products/' + fileName

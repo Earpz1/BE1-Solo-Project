@@ -4,7 +4,7 @@ import fs from 'fs-extra'
 
 const { readJSON, writeJSON, writeFile } = fs
 
-const dataFolder = join(dirname(fileURLToPath(import.meta.url)), '../data')
+const dataFolder = join(dirname(fileURLToPath(import.meta.url)), '../../data')
 const productsJSON = join(dataFolder, 'products.json')
 const reviewsJSON = join(dataFolder, 'reviews.json')
 const productsImageFolder = join(process.cwd(), './public/img/products')

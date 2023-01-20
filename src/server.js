@@ -2,9 +2,11 @@ import express from 'express'
 import { join } from 'path'
 import cors from 'cors'
 import { genericError, NotFoundError } from './errors.js'
-import productsRouter from '../products/index.js'
-import reviewsRouter from '../reviews/index.js'
+import productsRouter from '../src/api/products/index.js'
+import reviewsRouter from '../src/api/reviews/index.js'
+import cartRouter from '../src/api/cart/index.js'
 import createHttpError from 'http-errors'
+import mongoose from 'mongoose'
 
 const server = express()
 const port = process.env.PORT
@@ -38,12 +40,22 @@ server.use(express.json())
 //Endpoints
 server.use('/products', productsRouter)
 server.use('/reviews', reviewsRouter)
+server.use('/cart', cartRouter)
 
 //Error handling
 
 server.use(NotFoundError)
 server.use(genericError)
 
-server.listen(port, () => {
-  console.log('The server is running on port', process.env.PORT)
+//Connect to the Database
+mongoose.connect(process.env.MONGO_DB_URL)
+
+mongoose.connection.on('connected', () => {
+  server.listen(port, () => {
+    console.log(
+      'The server is running on port',
+      process.env.PORT,
+      'and the database is connected',
+    )
+  })
 })
