@@ -33,7 +33,7 @@ cartRouter.get('/:cartID', async (request, response, next) => {
     })
 
     if (cart) {
-      response.status(200).send(cart)
+      response.status(200).send(cart.toObject())
     } else {
       next(
         createHttpError(
@@ -41,6 +41,22 @@ cartRouter.get('/:cartID', async (request, response, next) => {
           `Cart with the ID ${request.params.cartID} is not found`,
         ),
       )
+    }
+  } catch (error) {
+    next(error)
+  }
+})
+
+cartRouter.put('/:cartID/:productID', async (request, response, next) => {
+  try {
+    const product = await cartModel.findByIdAndUpdate(
+      '63ca8744c8f0e1eeb1d66f44',
+      { $push: { products: { _id: request.params.productID } } },
+      { new: true, runValidators: true },
+    )
+
+    if (product) {
+      response.status(200).send(product)
     }
   } catch (error) {
     next(error)

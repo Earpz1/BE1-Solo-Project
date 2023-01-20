@@ -16,7 +16,7 @@ server.get('/', (request, response) => {
   response.send('Successful connection')
 })
 
-const whitelist = [process.env.FE_PROD_URL]
+const whitelist = [process.env.FE_PROD_URL, process.env.BE_PROD_URL]
 
 //Middleware
 server.use(express.static(publicFolder))
